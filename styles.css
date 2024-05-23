@@ -1,0 +1,313 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    width: 100%;
+    background-color: #007BFF;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 15px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+nav button:hover {
+    background-color: #0056b3;
+}
+
+h1, h2 {
+    margin: 0 0 20px 0;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+    color: #007BFF; /* Texto em tom de azul */
+}
+
+input[type="text"], input[type="checkbox"] {
+    padding: 10px;
+    border: 1px solid #007BFF; /* Borda em tom de azul */
+    border-radius: 5px;
+    background-color: #e0f7ff; /* Fundo azul claro */
+}
+
+input[type="text"]:focus, input[type="checkbox"]:focus {
+    border-color: #0056b3;
+    outline: none;
+}
+
+button {
+    padding: 15px 20px;
+    background-color: #007BFF; /* Fundo azul */
+    color: #fff; /* Texto branco */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #e9e9e9;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+}
+
+li > span {
+    flex-basis: 100%;
+    margin-bottom: 10px;
+}
+
+li select {
+    margin-right: 10px;
+}
+
+.called {
+    background-color: #d1ecf1;
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav button {
+        width: 80%;
+        margin-bottom: 10px;
+    }
+
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    form {
+        gap: 10px;
+    }
+
+    button {
+        padding: 10px 15px;
+    }
+
+    li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    li input[type="text"], li select {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    li button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    nav button {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    h1, h2 {
+        font-size: 24px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+
+    li {
+        padding: 10px;
+    }
+}
+
+/* Adicione este trecho ao seu arquivo CSS */
+
+li select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100px; /* Defina a largura desejada */
+    margin-right: 10px; /* Ajuste a margem conforme necessário */
+    font-size: 14px; /* Ajuste o tamanho da fonte conforme necessário */
+}
+
+.called-column {
+    float: left;
+    box-sizing: border-box;
+}
+
+#currentCalledColumn {
+    width: 70%; /* Largura da coluna "Chamado Agora" */
+    margin-right: 2%; /* Espaçamento entre as colunas */
+}
+
+#previousCalledColumn {
+    width: 28%; /* Largura da coluna "Histórico de Chamadas" */
+}
+
+#currentCalledList li {
+    font-size: 60px; /* Tamanho do texto aumentado para a coluna "Chamado Agora" */
+}
+#called-section {
+    height: 500px; /* Altura aumentada da seção "Pacientes Chamados" */
+}
+
+.notification-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 9999; /* Garante que a notificação esteja na frente de outros elementos */
+}
+
+.notification {
+    background-color: #4CAF50; /* Cor de fundo verde */
+    color: white; /* Cor do texto branco */
+    padding: 15px; /* Espaçamento interno */
+    margin-bottom: 10px; /* Margem inferior */
+    border-radius: 5px; /* Bordas arredondadas */
+    display: none; /* Oculta inicialmente */
+}
+
+.position-notification {
+    background-color: #2196F3; /* Cor de fundo azul */
+    color: white; /* Cor do texto branco */
+    padding: 15px; /* Espaçamento interno */
+    margin-bottom: 10px; /* Margem inferior */
+    border-radius: 5px; /* Bordas arredondadas */
+    display: none; /* Oculta inicialmente */
+}
+
+.container {
+    background-color: #f0f0f0;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    width: 80%;
+    max-width: 600px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-weight: bold;
+    color: #007BFF;
+}
+
+input[type="text"], input[type="checkbox"] {
+    padding: 10px;
+    border: 1px solid #007BFF;
+    border-radius: 5px;
+    background-color: #e0f7ff;
+    width: 100%; /* Define a largura dos campos de entrada como 100% */
+}
+
+.priority-container {
+    display: flex;
+    align-items: center;
+}
+
+button {
+    padding: 15px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.notification-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 9999;
+}
+
+.notification {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: none;
+}
+
+.position-notification {
+    background-color: #2196F3;
+    color: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: none;
+}

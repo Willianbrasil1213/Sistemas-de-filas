@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Fila do Consultório</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <button id="link-register">Registrar</button>
+        <button id="link-call">Chamar</button>
+        <button id="link-called">Chamados</button>
+    </nav>
+
+    <div class="container" id="register-section" style="display:none;">
+        <h2>Registro de Pacientes</h2>
+        <form id="patientForm">
+            <label for="firstName">Primeiro Nome:</label>
+            <input type="text" id="firstName" required><br><br>
+            
+            <label for="lastName">Último Nome:</label>
+            <input type="text" id="lastName" required><br><br>
+            
+            <div class="priority-container">
+                <label for="priority">Você tem prioridade?</label>
+                <input type="checkbox" id="priority">
+            </div><br>
+            
+            <button type="submit">Registrar</button>
+        </form>
+        <div class="notification-container"></div>
+
+    </div>
+    
+
+    <div class="container" id="call-section" style="display:none;">
+        <h2>Pacientes na Fila</h2>
+        <ul id="queue"></ul>
+    </div>
+
+    <div class="container" id="called-section" style="display:none;">
+        <h2>Pacientes Chamados</h2>
+        <div class="called-column" id="currentCalledColumn">
+            <h3>Chamado Agora</h3>
+            <ul id="currentCalledList"></ul>
+        </div>
+        <div class="called-column" id="previousCalledColumn">
+            <h3>Histórico de Chamadas</h3>
+            <ul id="previousCalledList"></ul>
+        </div>
+    </div>
+    
+
+    <script src="scripts.js"></script>
+</body>
+</html>
